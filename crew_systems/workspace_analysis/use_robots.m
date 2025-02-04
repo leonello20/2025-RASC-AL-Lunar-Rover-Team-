@@ -2,7 +2,6 @@ close all
 clear
 
 nbv_reachable_workspace
-load('sawyer_workspace_data.mat')
 
 robot = rigidBodyTree;
 bodies = cell(6,1);
@@ -42,6 +41,6 @@ nbvConfig(3).JointPosition = j3;
 show(nbv, nbvConfig)
 hold on
 show(robot, config)
-show(sawyer)
+% show(sawyer)
 plot3(yaw_plane_cartx, yaw_plane_carty, yaw_plane_cartz);
 axis equal

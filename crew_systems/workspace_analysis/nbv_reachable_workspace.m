@@ -53,7 +53,7 @@ yaw_plane_carty = 0;
 yaw_plane_cartz = 0;
 % Begin the long ass iteration (its so over)
 
-T2 = SslRotMat(nbvDH(2,2), "x", "deg") * SslTransMat(nbvDH(2,1), "a") * SslRotMat(0, "z", "deg") * SslTransMat(nbvDH(2,3), "d");
+T2 = SslRotMat(nbvDH(2,2), "x", "deg") * SslTransMat(nbvDH(2,1), "a") * SslRotMat(180, "z", "deg") * SslTransMat(nbvDH(2,3), "d");
 T3 = SslRotMat(nbvDH(3,2), "x", "deg") * SslTransMat(nbvDH(3,1), "a") * SslRotMat(0, "z", "deg") * SslTransMat(nbvDH(3,3), "d");
 T4 = SslRotMat(nbvDH(4,2), "x", "deg") * SslTransMat(nbvDH(4,1), "a") * SslRotMat(0, "z", "deg") * SslTransMat(nbvDH(4,3), "d");
 T5 = SslRotMat(nbvDH(5,2), "x", "deg") * SslTransMat(nbvDH(5,1), "a") * SslRotMat(0, "z", "deg") * SslTransMat(nbvDH(5,3), "d");
@@ -64,7 +64,7 @@ count = 1;
 for th1=-180:0.005:180
     % Get the DH transformation matricies
     T1 = SslRotMat(nbvDH(1,2), "x", "deg")*SslTransMat(nbvDH(1,1), "a")*SslRotMat(th1, "z", "deg")*SslTransMat(nbvDH(1,3), "d");
-    T_final = T1*T2*T3*T4*T5*T6;   %*Tool; % get the final transformation matrix
+    T_final = T1*T2*T3*T4*T5*T6   * Tool; % get the final transformation matrix
     yaw_plane_cartx(count) = T_final(1,4); % Save the value in the x vector
     yaw_plane_carty(count) = T_final(2,4); % Save the value in the y vector
     yaw_plane_cartz(count) = T_final(3,4); % Save the value in the z vector
