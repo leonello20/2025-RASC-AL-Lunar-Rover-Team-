@@ -53,12 +53,12 @@ yaw_plane_carty = 0;
 yaw_plane_cartz = 0;
 % Begin the long ass iteration (its so over)
 
-T2 = SslRotMat(nbvDH(2,2), "x", "deg") * SslTransMat(nbvDH(2,1), "a") * SslRotMat(0, "z", "rad") * SslTransMat(nbvDH(2,3), "d");
-T3 = SslRotMat(nbvDH(3,2), "x", "deg") * SslTransMat(nbvDH(3,1), "a") * SslRotMat(0, "z", "rad") * SslTransMat(nbvDH(3,3), "d");
-T4 = SslRotMat(nbvDH(4,2), "x", "deg") * SslTransMat(nbvDH(4,1), "a") * SslRotMat(0, "z", "rad") * SslTransMat(nbvDH(4,3), "d");
-T5 = SslRotMat(nbvDH(5,2), "x", "deg") * SslTransMat(nbvDH(5,1), "a") * SslRotMat(0, "z", "rad") * SslTransMat(nbvDH(5,3), "d");
-T6 = SslRotMat(nbvDH(6,2), "x", "deg") * SslTransMat(nbvDH(6,1), "a") * SslRotMat(0, "z", "rad") * SslTransMat(nbvDH(6,3), "d");
-% Tool = SslRotMat(nbvDH(7,2), "x", "deg")*SslTransMat(nbvDH(7,1), "a")*SslRotMat(nbvDH(7,4), "z", "deg")*SslTransMat(nbvDH(7,3), "d");
+T2 = SslRotMat(nbvDH(2,2), "x", "deg") * SslTransMat(nbvDH(2,1), "a") * SslRotMat(0, "z", "deg") * SslTransMat(nbvDH(2,3), "d");
+T3 = SslRotMat(nbvDH(3,2), "x", "deg") * SslTransMat(nbvDH(3,1), "a") * SslRotMat(0, "z", "deg") * SslTransMat(nbvDH(3,3), "d");
+T4 = SslRotMat(nbvDH(4,2), "x", "deg") * SslTransMat(nbvDH(4,1), "a") * SslRotMat(0, "z", "deg") * SslTransMat(nbvDH(4,3), "d");
+T5 = SslRotMat(nbvDH(5,2), "x", "deg") * SslTransMat(nbvDH(5,1), "a") * SslRotMat(0, "z", "deg") * SslTransMat(nbvDH(5,3), "d");
+T6 = SslRotMat(nbvDH(6,2), "x", "deg") * SslTransMat(nbvDH(6,1), "a") * SslRotMat(0, "z", "deg") * SslTransMat(nbvDH(6,3), "d");
+% Tool = SslRotMat(nbvDH(7,2), "x", "deg") * SslTransMat(nbvDH(7,1), "a") * SslRotMat(nbvDH(7,4), "z", "deg") * SslTransMat(nbvDH(7,3), "d");
 
 count = 1;
 for th1=-180:0.005:180

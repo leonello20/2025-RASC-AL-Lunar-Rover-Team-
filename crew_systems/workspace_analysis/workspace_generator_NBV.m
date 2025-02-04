@@ -83,11 +83,11 @@ for th1=nbvLimits(1,1):iter_per_joint_array(1):nbvLimits(1,2)
                     for th6=nbvLimits(6,1):iter_per_joint_array(6):nbvLimits(6,2)
                         % Get the DH transformation matricies
                         T1 = SslRotMat(nbvDH(1,2), "x", "deg")*SslTransMat(nbvDH(1,1), "a")*SslRotMat(th1, "z", "deg")*SslTransMat(nbvDH(1,3), "d");
-                        T2 = SslRotMat(nbvDH(2,2), "x", "deg") * SslTransMat(nbvDH(2,1), "a") * SslRotMat(0, "z", "rad") * SslTransMat(nbvDH(2,3), "d");
-                        T3 = SslRotMat(nbvDH(3,2), "x", "deg") * SslTransMat(nbvDH(3,1), "a") * SslRotMat(0, "z", "rad") * SslTransMat(nbvDH(3,3), "d");
-                        T4 = SslRotMat(nbvDH(4,2), "x", "deg") * SslTransMat(nbvDH(4,1), "a") * SslRotMat(0, "z", "rad") * SslTransMat(nbvDH(4,3), "d");
-                        T5 = SslRotMat(nbvDH(5,2), "x", "deg") * SslTransMat(nbvDH(5,1), "a") * SslRotMat(0, "z", "rad") * SslTransMat(nbvDH(5,3), "d");
-                        T6 = SslRotMat(nbvDH(6,2), "x", "deg") * SslTransMat(nbvDH(6,1), "a") * SslRotMat(0, "z", "rad") * SslTransMat(nbvDH(6,3), "d");
+                        T2 = SslRotMat(nbvDH(2,2), "x", "deg") * SslTransMat(nbvDH(2,1), "a") * SslRotMat(0, "z", "deg") * SslTransMat(nbvDH(2,3), "d");
+                        T3 = SslRotMat(nbvDH(3,2), "x", "deg") * SslTransMat(nbvDH(3,1), "a") * SslRotMat(0, "z", "deg") * SslTransMat(nbvDH(3,3), "d");
+                        T4 = SslRotMat(nbvDH(4,2), "x", "deg") * SslTransMat(nbvDH(4,1), "a") * SslRotMat(0, "z", "deg") * SslTransMat(nbvDH(4,3), "d");
+                        T5 = SslRotMat(nbvDH(5,2), "x", "deg") * SslTransMat(nbvDH(5,1), "a") * SslRotMat(0, "z", "deg") * SslTransMat(nbvDH(5,3), "d");
+                        T6 = SslRotMat(nbvDH(6,2), "x", "deg") * SslTransMat(nbvDH(6,1), "a") * SslRotMat(0, "z", "deg") * SslTransMat(nbvDH(6,3), "d");
                         Tool = SslRotMat(nbvDH(7,2), "x", "deg")*SslTransMat(nbvDH(7,1), "a")*SslRotMat(nbvDH(7,4), "z", "deg")*SslTransMat(nbvDH(7,3), "d");
                         T_final = T1*T2*T3*T4*T5*T6*Tool; % get the final transformation matrix
                         cartx(count) = T_final(1,4); % Save the value in the x vector
