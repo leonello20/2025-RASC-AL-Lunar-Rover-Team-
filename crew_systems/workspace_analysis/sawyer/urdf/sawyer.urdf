@@ -15,7 +15,9 @@
   <material name="sawyer_gray">
     <color rgba="0.75294 0.75294 0.75294 1"/>
   </material>
+
   <link name="base"/>
+
   <link name="torso">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -90,11 +92,13 @@
     <parent link="base"/>
     <child link="right_arm_base_link"/>
   </joint>
+
   <joint name="torso_t0" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="base"/>
     <child link="torso"/>
   </joint>
+
   <link name="right_arm_base_link">
     <inertial>
       <origin rpy="0 0 0" xyz="-0.0006241 -2.8025E-05 0.065404"/>
@@ -144,6 +148,7 @@
     <axis xyz="0 0 1"/>
     <limit effort="80.0" lower="-3.0503" upper="3.0503" velocity="1.74"/>
   </joint>
+
   <link name="head">
     <inertial>
       <origin rpy="0 0 0" xyz="0.0053207 -2.6549E-05 0.1021"/>

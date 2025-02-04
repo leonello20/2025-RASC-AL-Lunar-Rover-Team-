@@ -5,7 +5,7 @@
 % --------------------- %
 
 % Returns the rotation matrix, in radians
-function R = RotMat(angle, axis, deg_or_rad)
+function R = SslRotMat(angle, axis, deg_or_rad)
     if(deg_or_rad == "deg")
         angle = angle*(pi/180);
     elseif(deg_or_rad == "rad")
