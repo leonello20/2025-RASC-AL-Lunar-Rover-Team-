@@ -6,8 +6,6 @@
 
 
 iter_per_joint_array = [1,180,180,180,180,180,180];
-
-
 % Z is "HEIGHT"
 % X is "LENGTH"
 % Y is "WIDTH"
