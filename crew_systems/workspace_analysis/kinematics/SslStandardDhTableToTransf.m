@@ -6,7 +6,7 @@
 
 % function to generate the transformation from frame i to frame j, given a
 % DH Table (modified DH), IN RADIANS
-function mat = SslDhTableToTransf(from, to, DH)
+function mat = SslStandardDhTableToTransf(from, to, DH)
 
 % expected input shape:
 % __|      a(i-1),            alpha(i-1),       d(i),         theta(i)
@@ -34,9 +34,9 @@ for i = from:to
         d = DH(i,3);
         theta = DH(i,4);
     end
-    T_track = T_track*[cos(theta), -sin(theta), 0, a;
-     sin(theta)*cos(alpha), cos(theta)*cos(alpha), -sin(alpha), -sin(alpha)*d;
-     sin(theta)*sin(alpha), cos(theta)*sin(alpha), cos(alpha), cos(alpha)*d;
+    T_track = T_track*[cos(theta), -sin(theta)*cos(alpha), sin(theta)*sin(alpha), a*cos(theta);
+     sin(theta), cos(theta)*cos(alpha), -cos(theta)*sin(alpha), a*sin(theta);
+     0, sin(alpha), cos(alpha), d;
      0, 0, 0, 1];
  
 end

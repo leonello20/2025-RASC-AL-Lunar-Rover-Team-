@@ -1,15 +1,30 @@
 close all
-clear
 
-% Run the file to get NBV workspace data
-nbv_reachable_workspace
+% Run the file to get crane reach workspace data
+if exist('crane_reach','var') ~= 1
+    crane_reachable_workspace
+end
+
+% Run the file to get crane full workspace data
+if exist('crane_ws','var') ~= 1
+    crane_full_workspace
+end
+
+% Run the file to get sawyer workspace data
+if exist('nbv_ws','var') ~= 1
+    sawyer_full_workspace
+end
+if exist('nbv_reach','var') ~= 1
+    sawyer_reachable_workspace
+end
 
 % Import da robits from the URDF file
 nbv = importNBV;
-% sawyer = importSawyer;
+rover = importRover("sawyer");
 
 % set the current config as the zero config for da robits
 nbvConfig = homeConfiguration(nbv);
+roverConfig = homeConfiguration(rover);
 
 % Below is redundant for copy-past purposes
 nbvConfig(1).JointPosition = 0;

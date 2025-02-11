@@ -3,7 +3,8 @@
 %  Workspace generator  %
 % --------------------- %
 % --------------------- %
-clear
+
+addpath("kinematics\")
 
 % RECALL THAT DH TABLES START i=0 IS THE BASE LINK, i.e [0,0,0]
 % units are degrees and meters
@@ -31,90 +32,80 @@ clear
 
 
 sawyerDH = [ 
-    0.081       -pi/2           0.317           0;
-    0           -pi/2           0.1925          3*pi/2;
-    0           -pi/2           0.4             0;
-    0           -pi/2          -0.1685          pi;
-    0           -pi/2           0.4             0;
-    0           -pi/2           0.1363          pi;
-    0           0               0.13375         3*pi/2;
-    0           0               0               0];
+    0.081       -pi/2           0.317            0;
+    0           -pi/2           0.1925          -pi/2;
+    0           -pi/2           0.4             -pi;
+    0           -pi/2          -0.1685          -pi;
+    0           -pi/2           0.4             -pi;
+    0           -pi/2           0.1363          -pi;
+    0            0               0.13375         -pi;
+    0            0               0                0];
 
-% % 0.4 
-% sawyerDH = [ 
-%     0           0               0.317           0;
-%     0.081       -pi/2           0.1925          0;
-%     0           0           0               0;
-%     0           -pi/2          -0.1685          0;
-%     0           -pi/2           0.4             0;
-%     0           -pi/2           0.1363          0;
-%     0           0               0.13375         0;
-%     0           0               0               0];
+sawyerDH_mod = sawyerDH;
+
+count = 1;
+% Get shoulder YAW reachable workspace
+for theta=-pi:0.001:pi
+    % Get the DH transformation matricies
+    sawyerDH_mod(1, 4) = theta;
+    T_final = SslStandardDhTableToTransf(0, 8, sawyerDH_mod);
+
+    sawyer_reach.yaw.cartx(count) = T_final(1,4); % Save the value in the x vector
+    sawyer_reach.yaw.carty(count) = T_final(2,4); % Save the value in the y vector
+    sawyer_reach.yaw.cartz(count) = T_final(3,4); % Save the value in the z vector
+    count = count+1; % iterate up
+end
 
 
-% Begin the long ass iteration (its so over)
+% reset DH table
+sawyerDH_mod = sawyerDH;
+sawyerDH_mod(3, 4) = pi/2;
 
-% sawyerDH_mod = sawyerDH;
-% sawyerDH_mod(2, 4) = pi;
-% sawyerDH_mod(3, 4) = pi/2;
-% 
-% count = 1;
-% % Get shoulder YAW reachable workspace
-% for theta=-pi:0.001:pi
-% 
-%     % Get the DH transformation matricies
-% 
-%     sawyerDH_mod(1, 4) = theta;
-%     T_final = SslDhTableToTransf(0, 7, sawyerDH_mod);
-% 
-%     sawyer_reach.yaw.cartx(count) = T_final(1,4); % Save the value in the x vector
-%     sawyer_reach.yaw.carty(count) = T_final(2,4); % Save the value in the y vector
-%     sawyer_reach.yaw.cartz(count) = T_final(3,4); % Save the value in the z vector
-%     count = count+1; % iterate up
-% end
-% 
-% 
-% % reset DH table
-% sawyerDH_mod = sawyerDH;
-% sawyerDH_mod(3, 4) = pi/2;
-% 
-% count = 1;
-% for theta=(-deg2rad(25)):0.001:(pi+deg2rad(25))
-% 
-%     % Get the DH transformation matricies
-%     sawyerDH_mod(2, 4) = theta;
-%     T_final = SslDhTableToTransf(0, 7, sawyerDH_mod);
-% 
-%     sawyer_reach.pitch.cartx(count) = T_final(1,4); % Save the value in the x vector
-%     sawyer_reach.pitch.carty(count) = T_final(2,4); % Save the value in the y vector
-%     sawyer_reach.pitch.cartz(count) = T_final(3,4); % Save the value in the z vector
-%     count = count+1; % iterate up
-% end
-% 
-% 
-% % reset DH table
-% sawyerDH_mod = sawyerDH;
-% sawyerDH_mod(2, 4) = pi+deg2rad(25);
-% 
-% count = 1;
-% for theta=(-pi/2):0.001:pi/2
-% 
-%     % Get the DH transformation matricies
-%     sawyerDH_mod(3, 4) = theta;
-%     T_final = SslDhTableToTransf(0, 7, sawyerDH_mod);
-% 
-%     sawyer_reach.elbow.cartx(count) = T_final(1,4); % Save the value in the x vector
-%     sawyer_reach.elbow.carty(count) = T_final(2,4); % Save the value in the y vector
-%     sawyer_reach.elbow.cartz(count) = T_final(3,4); % Save the value in the z vector
-%     count = count+1; % iterate up
-% end
+count = 1;
+for theta=-pi:0.001:pi
 
+    % Get the DH transformation matricies
+    sawyerDH_mod(2, 4) = theta;
+    T_final = SslStandardDhTableToTransf(0, 7, sawyerDH_mod);
+
+    sawyer_reach.pitch.cartx(count) = T_final(1,4); % Save the value in the x vector
+    sawyer_reach.pitch.carty(count) = T_final(2,4); % Save the value in the y vector
+    sawyer_reach.pitch.cartz(count) = T_final(3,4); % Save the value in the z vector
+    count = count+1; % iterate up
+end
+
+% Generate full Sawyer workspace
+% reset DH table
+sawyerDH_mod = sawyerDH;
+
+count = 1;
+for theta=-pi:0.001:pi
+
+    % Get the DH transformation matricies
+    sawyerDH_mod(1, 4) = theta;
+    T_final = SslStandardDhTableToTransf(0, 7, sawyerDH_mod);
+
+    sawyer_reach.full.j1.cartx(count) = T_final(1,4); % Save the value in the x vector
+    sawyer_reach.full.j1.carty(count) = T_final(2,4); % Save the value in the y vector
+    sawyer_reach.full.j1.cartz(count) = T_final(3,4); % Save the value in the z vector
+    count = count+1; % iterate up
+end
+sawyerDH_mod = sawyerDH;
+count = 1;
+for theta=-pi:0.001:pi
+
+    % Get the DH transformation matricies
+    sawyerDH_mod(2, 4) = theta;
+    T_final = SslStandardDhTableToTransf(0, 7, sawyerDH_mod);
+
+    sawyer_reach.full.j2.cartx(count) = T_final(1,4); % Save the value in the x vector
+    sawyer_reach.full.j2.carty(count) = T_final(2,4); % Save the value in the y vector
+    sawyer_reach.full.j2.cartz(count) = T_final(3,4); % Save the value in the z vector
+    count = count+1; % iterate up
+end
 
 
 
 % Now save the vector outputs
-% file_name = "sawyer_yaw_workspace.mat";
-% x = cartx;
-% y = carty;
-% z = cartz;
-% save(file_name, "x", "y", "z");
+file_name = "data/sawyer_reach";
+save(file_name, "sawyer_reach", "-v7.3");

@@ -31,13 +31,14 @@ clear
 % T |       0.2666               0.0            0.0            0.0;
 
 nbvDH = [
-  0.0,        0.0,            0.2872,        0.0; 
+  0.0,        0.0,          0.2872,        0.0; 
   0.0,        pi/2,         0.0,           0.0;  
-  0.5589,    -pi,         0.0,           0.0;    
+  0.5589,    -pi,           0.0,           0.0;    
   0.1514,     pi/2,         0.5388,        0.0;  
   0.0,       -pi/2,         0.0,           0.0;
   0.0,        pi/2,         0.0,           0.0;
-  0.0,        0.0,         0.2666,        0.0];
+  0.0,        0.0,          0.2666,        0.0];
+
 
 
 % nbvLimits = [-pi    pi;
@@ -60,7 +61,7 @@ for theta=-pi:0.001:pi
     % Get the DH transformation matricies
 
     nbvDH_mod(1, 4) = theta;
-    T_final = SslDhTableToTransf(0, 7, nbvDH_mod);
+    T_final = SslModifDhTableToTransf(0, 7, nbvDH_mod);
     
     nbv_reach.yaw.cartx(count) = T_final(1,4); % Save the value in the x vector
     nbv_reach.yaw.carty(count) = T_final(2,4); % Save the value in the y vector
@@ -78,7 +79,7 @@ for theta=(-deg2rad(25)):0.001:(pi+deg2rad(25))
 
     % Get the DH transformation matricies
     nbvDH_mod(2, 4) = theta;
-    T_final = SslDhTableToTransf(0, 7, nbvDH_mod);
+    T_final = SslModifDhTableToTransf(0, 7, nbvDH_mod);
     
     nbv_reach.pitch.cartx(count) = T_final(1,4); % Save the value in the x vector
     nbv_reach.pitch.carty(count) = T_final(2,4); % Save the value in the y vector
@@ -96,7 +97,7 @@ for theta=(-pi/2):0.001:pi/2
 
     % Get the DH transformation matricies
     nbvDH_mod(3, 4) = theta;
-    T_final = SslDhTableToTransf(0, 7, nbvDH_mod);
+    T_final = SslModifDhTableToTransf(0, 7, nbvDH_mod);
     
     nbv_reach.elbow.cartx(count) = T_final(1,4); % Save the value in the x vector
     nbv_reach.elbow.carty(count) = T_final(2,4); % Save the value in the y vector
@@ -104,12 +105,6 @@ for theta=(-pi/2):0.001:pi/2
     count = count+1; % iterate up
 end
 
-
-
-
 % Now save the vector outputs
-% file_name = "nbv_yaw_workspace.mat";
-% x = cartx;
-% y = carty;
-% z = cartz;
-% save(file_name, "x", "y", "z");
+file_name = "data/nbv_reach";
+save(file_name, "nbv_reach", "-v7.3");

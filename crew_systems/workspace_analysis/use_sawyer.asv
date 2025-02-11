@@ -36,6 +36,11 @@ if exist('sawyer_reach','var') ~= 1
     sawyer_reachable_workspace
 end
 
+% Condition data
+for i length(crane_full_workspace.full.cartx)
+    
+end
+
 % Import da robits from the URDF file
 sawyer = importSawyer;
 rover = importRover("sawyer");
@@ -70,7 +75,7 @@ xlim([-6.5,6.5])
 ylim([-6.5,6.5])
 zlim([0,8])
 hold on
-scatter3(crane_ws.full_unique.cart(:,1),crane_ws.full_unique.cart(:,2),crane_ws.full_unique.cart(:,3), "r");
+scatter3(crane_ws.full.cartx, crane_ws.full.carty, crane_ws.full.cartz, "r");
 
 % figure
 % % set the current config as the zero config for da robits
