@@ -12,10 +12,10 @@ end
 
 % Run the file to get sawyer workspace data
 if exist('nbv_ws','var') ~= 1
-    nbv_full_workspace
+    sawyer_full_workspace
 end
 if exist('nbv_reach','var') ~= 1
-    nbv_reachable_workspace
+    sawyer_reachable_workspace
 end
 
 % Import da robits from the URDF file
@@ -116,22 +116,8 @@ grid on
 axis equal
 
 % Full workspace plot
-count = 1;
-for i = 1:1000:length(nbv_ws.full_unique.cart(:,1))
-    count = count + 1;
-end
-x(count) = 0;
-y(count) = 0;
-z(count) = 0;
-
-count = 1;
-for i = 1:500:length(nbv_ws.full_unique.cart(:,1))
-    x(count) = nbv_ws.full_unique.cart(i,1);
-    y(count) = nbv_ws.full_unique.cart(i,2);
-    z(count) = nbv_ws.full_unique.cart(i,3);
-    count = count + 1;
-end
-
 figure
-scatter3(x,y,z, 1,".b")
-axis equal
+count = 1;
+for i = 1:10:length(nbv_ws.full.cartx)
+
+end

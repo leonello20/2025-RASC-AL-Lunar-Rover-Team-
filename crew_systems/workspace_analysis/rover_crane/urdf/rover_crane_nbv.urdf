@@ -31,14 +31,14 @@
         <visual>
             <origin xyz="0 0 0.25" rpy="0 0 0" />
             <geometry>
-               <box size="2.4 1.5 0.5"/>
+               <box size="2.6 1.5 0.5"/>
             </geometry>
             <material name="gold"/>
         </visual>
         <collision>
             <origin xyz="0 0 0.25" rpy="0 0 0" />
             <geometry>
-                <box size="2.4 1.5 0.5"/>
+                <box size="2.6 1.5 0.5"/>
             </geometry>
         </collision>   
     </link>
@@ -62,7 +62,7 @@
     <joint name="joint0_1" type="revolute">
         <parent link="rover_base_link"/>
         <child link="crane_yaw"/>
-        <origin xyz="1.0 0 0.5" rpy="0 0 0"/>
+        <origin xyz="1.1 0 0.5" rpy="0 0 0"/>
         <axis xyz="0 0 1"/>
         <limit lower="-0.523599" upper="0.523599" effort="0" velocity="0"/>
     </joint>

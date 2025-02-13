@@ -56,7 +56,7 @@ nbv_limits = [-pi    pi;
  -pi/2-deg2rad(25)   pi/2+deg2rad(25);
               -pi    pi];
 
-iter_per_joint_array = [deg2rad(30),deg2rad(15),deg2rad(15),deg2rad(15),deg2rad(15),deg2rad(15)];
+iter_per_joint_array = [deg2rad(30),deg2rad(10),deg2rad(10),deg2rad(10),deg2rad(10),deg2rad(360)];
 
 
 % Get the recquired vector length so we don't make it too big
@@ -70,9 +70,7 @@ for th1=nbv_limits(1,1):iter_per_joint_array(1):nbv_limits(1,2)
         for th3=nbv_limits(3,1):iter_per_joint_array(3):nbv_limits(3,2)
             for th4=nbv_limits(4,1):iter_per_joint_array(4):nbv_limits(4,2)
                 for th5=nbv_limits(5,1):iter_per_joint_array(5):nbv_limits(5,2)
-                    for th6=nbv_limits(6,1):iter_per_joint_array(6):nbv_limits(6,2)
-                        count = count+1;
-                    end
+                    count = count+1;
                 end
             end
         end
@@ -86,6 +84,7 @@ fprintf("Array length: " + int2str(data_length) + "\n")
 nbv_ws.full.cartx(data_length) = 0; % initialize the nbv_ws.full.cartesian x vector
 nbv_ws.full.carty(data_length) = 0; % initialize the nbv_ws.full.cartesian y vector
 nbv_ws.full.cartz(data_length) = 0; % initialize the nbv_ws.full.cartesian z vector
+nbv_ws.full.q(data_length,:) = [0,0,0,0,0,0];
 
 % reset counter
 count = 1; 
@@ -110,22 +109,21 @@ for th1=nbv_limits(1,1):iter_per_joint_array(1):nbv_limits(1,2)
                 T_1_4 = T_1_3 * SslStandardDhToTransf(nbvDH(4,1), nbvDH(4,2), nbvDH(4,3), nbvDH(4,4)+th4);
 
                 for th5=nbv_limits(5,1):iter_per_joint_array(5):nbv_limits(5,2)
-                    % Compute transform T_1_5
-                    T_1_5 = T_1_4 * SslStandardDhToTransf(nbvDH(5,1), nbvDH(5,2), nbvDH(5,3), nbvDH(5,4)+th5);
-
-                    for th6=nbv_limits(6,1):iter_per_joint_array(6):nbv_limits(6,2)
-                        % Compute transform T_1_6
-                        T_1_6 = T_1_5 * SslStandardDhToTransf(nbvDH(6,1), nbvDH(6,2), nbvDH(6,3), nbvDH(6,4)+th6);
-                        % Compute the final transformation T_1_7
-                        % Technically unecessary as this only affects
-                        % tool orientation
-                        T_final = T_1_6 * SslStandardDhToTransf(nbvDH(7,1), nbvDH(7,2), nbvDH(7,3), nbvDH(7,4));
-
-                        nbv_ws.full.cartx(count) = T_final(1,4); % Save the value in the x vector
-                        nbv_ws.full.carty(count) = T_final(2,4); % Save the value in the y vector
-                        nbv_ws.full.cartz(count) = T_final(3,4); % Save the value in the z vector
-                        count = count+1; % iterate up
-                    end
+                    % Iterate the joint positions (theta values)
+                    nbvDH_mod(1,4) = nbvDH(1,4)+th1;
+                    nbvDH_mod(2,4) = nbvDH(2,4)+th2;
+                    nbvDH_mod(3,4) = nbvDH(3,4)+th3;
+                    nbvDH_mod(4,4) = nbvDH(4,4)+th4;
+                    nbvDH_mod(5,4) = nbvDH(5,4)+th5;
+                    
+                    % Compute the final output pose
+                    T_final = SslModifDhTableToTransf(0, 7, nbvDH_mod);
+                    nbv_ws.full.cartx(count) = T_final(1,4); % Save the value in the x vector
+                    nbv_ws.full.carty(count) = T_final(2,4); % Save the value in the y vector
+                    nbv_ws.full.cartz(count) = T_final(3,4); % Save the value in the z vector
+                    % Save the joint state that we are currently at
+                    nbv_ws.full.q(count,:) = [nbvDH(1,4)+th1,nbvDH(2,4)+th2,nbvDH(3,4)+th3,nbvDH(4,4)+th4,nbvDH(5,4)+th5,nbvDH(6,4)];
+                    count = count+1; % iterate up
                 end
             end
         end

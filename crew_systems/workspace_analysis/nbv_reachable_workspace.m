@@ -66,6 +66,7 @@ for theta=-pi:0.001:pi
     nbv_reach.yaw.cartx(count) = T_final(1,4); % Save the value in the x vector
     nbv_reach.yaw.carty(count) = T_final(2,4); % Save the value in the y vector
     nbv_reach.yaw.cartz(count) = T_final(3,4); % Save the value in the z vector
+    nbv_reach.yaw.q(count, :) = [nbvDH_mod(1,4),nbvDH_mod(2,4),nbvDH_mod(3,4),nbvDH_mod(4,4),nbvDH_mod(5,4),nbvDH_mod(6,4)];
     count = count+1; % iterate up
 end
 
@@ -84,6 +85,7 @@ for theta=(-deg2rad(25)):0.001:(pi+deg2rad(25))
     nbv_reach.pitch.cartx(count) = T_final(1,4); % Save the value in the x vector
     nbv_reach.pitch.carty(count) = T_final(2,4); % Save the value in the y vector
     nbv_reach.pitch.cartz(count) = T_final(3,4); % Save the value in the z vector
+    nbv_reach.pitch.q(count, :) = [nbvDH_mod(1,4),nbvDH_mod(2,4),nbvDH_mod(3,4),nbvDH_mod(4,4),nbvDH_mod(5,4),nbvDH_mod(6,4)];
     count = count+1; % iterate up
 end
 
@@ -102,6 +104,7 @@ for theta=(-pi/2):0.001:pi/2
     nbv_reach.elbow.cartx(count) = T_final(1,4); % Save the value in the x vector
     nbv_reach.elbow.carty(count) = T_final(2,4); % Save the value in the y vector
     nbv_reach.elbow.cartz(count) = T_final(3,4); % Save the value in the z vector
+    nbv_reach.elbow.q(count, :) = [nbvDH_mod(1,4),nbvDH_mod(2,4),nbvDH_mod(3,4),nbvDH_mod(4,4),nbvDH_mod(5,4),nbvDH_mod(6,4)];
     count = count+1; % iterate up
 end
 
