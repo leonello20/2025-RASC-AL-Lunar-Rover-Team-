@@ -152,7 +152,7 @@ figure
 show(crane, craneConfig, Position=cranePosition);
 hold on
 fill3(crane_reach_old2.pitch.cartx, crane_reach_old2.pitch.carty, crane_reach_old2.pitch.cartz, "r", "FaceAlpha","0.5");
-fill3(crane_reach_old2.pitch_rigid.cartx, crane_reach_old2.pitch_rigid.carty, crane_reach_old2.pitch_rigid.cartz, "r", "FaceAlpha","0.5");
+fill3(crane_reach_old2.pitch_rigid.cartx, crane_reach_old2.pitch_rigid.carty, crane_reach_old2.pitch_rigid.cartz, "g", "FaceAlpha","0.5");
 title("Rover Crane Workspace Reach Along Global Y-Axis [2D]");
 view([0,1,0]);
 camproj("orthographic");
@@ -161,8 +161,6 @@ zlabel("z-reach (meters)");
 xlim([-5,2]);
 zlim([0, 8]);
 grid on
-
-
 
 
 
