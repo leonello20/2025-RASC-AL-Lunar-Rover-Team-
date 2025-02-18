@@ -20,24 +20,21 @@ function mat = SslStandardDhTableToTransf(from, to, DH)
 % CAN ONLY GO FROM LOWER -> HIGHER FRAMES
 
 T_track = eye(4);
-base = 0;
+if(from == 0)
+    from = 1;
+end
 
 for i = from:to
-    if(i == 0)
-        alpha = 0;
-        a = 0;
-        d = 0;
-        theta = 0;
-    else
-        alpha = DH(i,2);
-        a = DH(i,1);
-        d = DH(i,3);
-        theta = DH(i,4);
-    end
-    T_track = T_track*[cos(theta), -sin(theta)*cos(alpha), sin(theta)*sin(alpha), a*cos(theta);
-     sin(theta), cos(theta)*cos(alpha), -cos(theta)*sin(alpha), a*sin(theta);
-     0, sin(alpha), cos(alpha), d;
-     0, 0, 0, 1];
+    a = DH(i,1);
+    alpha = DH(i,2);
+    d = DH(i,3);
+    theta = DH(i,4);
+
+    T_track = T_track*[
+        cos(theta),     -sin(theta)*cos(alpha),       sin(theta)*sin(alpha),      a*cos(theta);
+        sin(theta),      cos(theta)*cos(alpha),      -cos(theta)*sin(alpha),      a*sin(theta);
+        0,               sin(alpha),                  cos(alpha),                 d;
+        0,               0,                           0,                          1          ];
  
 end
 mat = T_track;

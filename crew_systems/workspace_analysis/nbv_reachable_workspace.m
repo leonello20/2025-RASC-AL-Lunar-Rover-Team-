@@ -3,7 +3,8 @@
 %  Workspace generator  %
 % --------------------- %
 % --------------------- %
-clear
+
+addpath("./kinematics/")
 
 % RECALL THAT DH TABLES START i=0 IS THE BASE LINK, i.e [0,0,0]
 % units are degrees and meters

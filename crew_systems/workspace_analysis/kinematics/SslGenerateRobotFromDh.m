@@ -1,4 +1,4 @@
-function robot_out = SslGenerateRobotFromUrdf(dh_table, dh_style)
+function robot_out = SslGenerateRobotFromDh(dh_table, dh_style)
     robot = rigidBodyTree;
     num_rows = length(dh_table(:,1));
     bodies = cell(num_rows,1);

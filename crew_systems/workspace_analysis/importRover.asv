@@ -1,0 +1,16 @@
+function robot = importRover(rbt)
+    if(rbt == "nbv")
+        robot = importrobot("./rover_crane/urdf/rover_crane_nbv.urdf");
+    elseif(rbt == "sawyer")
+        robot = importrobot("./rover_crane/urdf/rover_crane_sawyer.urdf");
+    elseif(rbt == "xz")
+        robot = importrobot("./rover_crane/urdf/rover_crane_for_density_xz.urdf");
+    elseif(rbt == "old")
+        robot = importrobot("./rover_crane/urdf/rover_crane.urdf");
+    elseif(rbt == "crane")
+        robot = importrobot("./rove")
+    else
+        robot = importrobot("./rover_crane/urdf/rover_crane.urdf");
+    end
+
+end

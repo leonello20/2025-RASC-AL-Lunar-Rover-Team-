@@ -20,7 +20,6 @@ function mat = SslModifDhTableToTransf(from, to, DH)
 % CAN ONLY GO FROM LOWER -> HIGHER FRAMES
 
 T_track = eye(4);
-base = 0;
 
 for i = from:to
     if(i == 0)
