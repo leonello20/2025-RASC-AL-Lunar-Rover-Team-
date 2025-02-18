@@ -141,28 +141,29 @@
         <limit lower="0.0" upper="1.2267" effort="0" velocity="0"/>
     </joint>
 
-<!--
     <link name="tip">
         <visual>
-            <origin xyz="-0.1 0 -0.17" rpy="0 1.5708 0" />
+            <!-- 0.5 + 0.054 -->
+            <origin xyz="0 0 -0.554" rpy="0 0 0" />
             <geometry>
-               <box size="0.34 0.2 0.2"/>
+               <box size="0.2 0.2 1.0"/>
             </geometry>
             <material name="gold"/>
         </visual>
         <collision>
-            <origin xyz="-0.1 0 -0.17" rpy="0 1.5708 0" />
+            <origin xyz="0 0 -0.554" rpy="0 0 0" />
             <geometry>
-                <box size="0.34 0.2 0.2"/>
+               <box size="0.2 0.2 1.0"/>
             </geometry>
-        </collision>   
+            <material name="gold"/>
+        </collision>
     </link>
 
     <joint name="tip_joint" type="fixed">
-        <parent link="crane_link2"/>
+        <parent link="crane_link4"/>
         <child link="tip"/>
-        <origin xyz="0 0 -0.1" rpy="0 -1.26165662836 0"/>
+        <!-- 90 - 68.7 -->
+        <origin xyz="0 0 0" rpy="0 -0.371755130675 0"/>
     </joint>
--->
 
 </robot>
