@@ -26,7 +26,7 @@
     -->
   </link>
 
- <joint name="wold_rotate" type="fixed">
+ <joint name="world_rotate" type="fixed">
     <parent link="ground"/>
     <child link="base_link"/>
     <origin xyz="0 0 0" rpy="-1.5708 0 0"/>

@@ -89,7 +89,7 @@ nbvConfig(3).JointPosition = -deg2rad(10);
 nbvConfig(4).JointPosition = 0;
 nbvConfig(5).JointPosition = 0;
 nbvConfig(6).JointPosition = 0;
-% 3D PITCH PLOT
+% 3D Elbow plot
 figure
 show(nbv, nbvConfig);
 hold on
@@ -137,7 +137,7 @@ axis equal
 
 % Plot density plots
 figure
-[values, centers] = hist3([transpose(nbv_ws.full.cartx), transpose(nbv_ws.full.carty)],[56 56]);
+[values, centers] = hist3([transpose(nbv_ws.full.cartx), transpose(nbv_ws.full.carty)],[51 51]);
 imagesc(centers{:}, values.');
 c = colorbar;
 xlabel(c, "Number of Repeated Positions");
@@ -156,7 +156,7 @@ nbvConfig(6).JointPosition = 0;
 show(nbv, nbvConfig)
 
 figure
-[values, centers] = hist3([transpose(nbv_ws.full.cartx), transpose(nbv_ws.full.cartz)],[56 56]);
+[values, centers] = hist3([transpose(nbv_ws.full.cartx), transpose(nbv_ws.full.cartz)],[51 51]);
 imagesc(centers{:}, values.');
 c = colorbar;
 xlabel(c, "Number of Repeated Positions");
@@ -175,7 +175,7 @@ nbvConfig(6).JointPosition = 0;
 show(nbv_xz, nbvConfig)
 
 figure;
-[values, centers] = hist3([transpose(nbv_ws.full.carty), transpose(nbv_ws.full.cartz)],[56 56]);
+[values, centers] = hist3([transpose(nbv_ws.full.carty), transpose(nbv_ws.full.cartz)],[51 51]);
 imagesc(centers{:}, values.');
 c = colorbar;
 xlabel(c, "Number of Repeated Positions");

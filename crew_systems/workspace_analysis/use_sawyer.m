@@ -118,7 +118,7 @@ zlim([-3,3]);
 axis equal
 
 figure
-[values, centers] = hist3([transpose(sawyer_ws.full.cartx), transpose(sawyer_ws.full.carty)],[56 56]);
+[values, centers] = hist3([transpose(sawyer_ws.full.cartx), transpose(sawyer_ws.full.carty)],[51 51]);
 imagesc(centers{:}, values.')
 c = colorbar;
 xlabel(c, "Number of Repeated Positions")
@@ -131,7 +131,7 @@ hold on
 show(sawyer, sawyerConfig);
 
 figure
-[values, centers] = hist3([transpose(sawyer_ws.full.cartx), transpose(sawyer_ws.full.cartz)],[56 56]);
+[values, centers] = hist3([transpose(sawyer_ws.full.cartx), transpose(sawyer_ws.full.cartz)],[51 51]);
 imagesc(centers{:}, values.')
 c = colorbar;
 xlabel(c, "Number of Repeated Positions")
@@ -151,7 +151,7 @@ sawyerConfig(7).JointPosition = 0;
 show(sawyer_xz, sawyerConfig);
 
 figure
-[values, centers] = hist3([transpose(sawyer_ws.full.carty), transpose(sawyer_ws.full.cartz)],[56 56]);
+[values, centers] = hist3([transpose(sawyer_ws.full.carty), transpose(sawyer_ws.full.cartz)],[51 51]);
 imagesc(centers{:}, values.')
 c = colorbar;
 xlabel(c, "Number of Repeated Positions")
