@@ -199,7 +199,7 @@
     </link>
 
     <joint name="tip_joint" type="fixed">
-        <parent link="cclrane_link4"/>
+        <parent link="crane_link4"/>
         <child link="tip"/>
         <!-- 90 - 68.7 -->
         <origin xyz="0 0 0" rpy="0 -0.371755130675 0"/>
