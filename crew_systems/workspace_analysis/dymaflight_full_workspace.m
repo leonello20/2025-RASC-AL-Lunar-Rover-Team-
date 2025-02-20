@@ -49,7 +49,7 @@ dyma_limits = [ -pi              pi;
                 -pi               0;
                 -pi              pi];
 
-iter_per_joint_array = [deg2rad(45),deg2rad(20),deg2rad(20),deg2rad(20),deg2rad(20),deg2rad(20),deg2rad(90)];
+iter_per_joint_array = [deg2rad(45),deg2rad(15),deg2rad(20),deg2rad(15),deg2rad(20),deg2rad(15),deg2rad(90)];
 
 
 % Get the recquired vector length so we don't make it too big

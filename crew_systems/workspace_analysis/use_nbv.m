@@ -212,7 +212,7 @@ show(nbv_xz, nbvConfig)
 
 
 
-clear i density samezies1 samezies2 samezies3 samezies4 samezies count tol_err_ant
+clear i density samezies1 samezies2 samezies3 samezies4 samezies count tol_err_ant c ans centers x_sample y_sample z_sample sample_interval nbv_xz nbv values
 
 
 

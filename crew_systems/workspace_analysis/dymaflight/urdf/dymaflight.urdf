@@ -8,13 +8,13 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-               <mesh filename="package://nbv/urdf/meshes/shld_yaw.stl" scale="0.001 0.001 0.001"/>
+               <mesh filename="package://dymaflight/urdf/meshes/shld_yaw.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-               <mesh filename="package://nbv/urdf/meshes/shld_yaw.stl" scale="0.001 0.001 0.001"/>
+               <mesh filename="package://dymaflight/urdf/meshes/shld_yaw.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
@@ -31,13 +31,13 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-               <mesh filename="package://nbv/urdf/meshes/shld_ptch.stl" scale="0.001 0.001 0.001"/>
+               <mesh filename="package://dymaflight/urdf/meshes/shld_ptch.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-               <mesh filename="package://nbv/urdf/meshes/shld_ptch.stl" scale="0.001 0.001 0.001"/>
+               <mesh filename="package://dymaflight/urdf/meshes/shld_ptch.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
@@ -55,13 +55,13 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-               <mesh filename="package://nbv/urdf/meshes/shld_roll.stl" scale="0.001 0.001 0.001"/>
+               <mesh filename="package://dymaflight/urdf/meshes/shld_roll.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-               <mesh filename="package://nbv/urdf/meshes/shld_roll.stl" scale="0.001 0.001 0.001"/>
+               <mesh filename="package://dymaflight/urdf/meshes/shld_roll.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
@@ -78,13 +78,13 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-               <mesh filename="package://nbv/urdf/meshes/elbw_ptch.stl" scale="0.001 0.001 0.001"/>
+               <mesh filename="package://dymaflight/urdf/meshes/elbw_ptch.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-               <mesh filename="package://nbv/urdf/meshes/elbw_ptch.stl" scale="0.001 0.001 0.001"/>
+               <mesh filename="package://dymaflight/urdf/meshes/elbw_ptch.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
@@ -101,13 +101,13 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-               <mesh filename="package://nbv/urdf/meshes/wrst_roll.stl" scale="0.001 0.001 0.001"/>
+               <mesh filename="package://dymaflight/urdf/meshes/wrst_roll.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-               <mesh filename="package://nbv/urdf/meshes/wrst_roll.stl" scale="0.001 0.001 0.001"/>
+               <mesh filename="package://dymaflight/urdf/meshes/wrst_roll.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
@@ -124,13 +124,13 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-               <mesh filename="package://nbv/urdf/meshes/wrst_ptch.stl" scale="0.001 0.001 0.001"/>
+               <mesh filename="package://dymaflight/urdf/meshes/wrst_ptch.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-               <mesh filename="package://nbv/urdf/meshes/wrst_ptch.stl" scale="0.001 0.001 0.001"/>
+               <mesh filename="package://dymaflight/urdf/meshes/wrst_ptch.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
@@ -147,13 +147,13 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-               <mesh filename="package://nbv/urdf/meshes/tool_roll.stl" scale="0.001 0.001 0.001"/>
+               <mesh filename="package://dymaflight/urdf/meshes/tool_roll.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-               <mesh filename="package://nbv/urdf/meshes/tool_roll.stl" scale="0.001 0.001 0.001"/>
+               <mesh filename="package://dymaflight/urdf/meshes/tool_roll.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>

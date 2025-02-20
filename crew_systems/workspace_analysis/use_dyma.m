@@ -106,7 +106,7 @@ axis equal
 
 % Full workspace plot
 count = 1;
-sample_interval = floor(length(dyma_ws.full_unique.cartx)/10000);
+sample_interval = floor(length(dyma_ws.full_unique.cartx)/15000);
 x_sample = zeros(sample_interval, 1);
 y_sample = zeros(sample_interval, 1);
 z_sample = zeros(sample_interval, 1);
@@ -148,7 +148,7 @@ dymaConfig(5).JointPosition = 0;
 dymaConfig(6).JointPosition = 0;
 dymaConfig(7).JointPosition = 0;
 figure
-[values, centers] = hist3([transpose(dyma_ws.full.cartx), transpose(dyma_ws.full.carty)],[56, 56]);
+[values, centers] = hist3([transpose(dyma_ws.full.cartx), transpose(dyma_ws.full.carty)],[51, 51]);
 imagesc(centers{:}, values.')
 c = colorbar;
 xlabel(c, "Number of Repeated Positions")
@@ -168,7 +168,7 @@ dymaConfig(5).JointPosition = 0;
 dymaConfig(6).JointPosition = 0;
 dymaConfig(7).JointPosition = 0;
 figure
-[values, centers] = hist3([transpose(dyma_ws.full.cartx), transpose(dyma_ws.full.cartz)],[56, 56]);
+[values, centers] = hist3([transpose(dyma_ws.full.cartx), transpose(dyma_ws.full.cartz)],[51, 51]);
 imagesc(centers{:}, values.')
 c = colorbar;
 xlabel(c, "Number of Repeated Positions")
@@ -188,7 +188,7 @@ dymaConfig(5).JointPosition = 0;
 dymaConfig(6).JointPosition = 0;
 dymaConfig(7).JointPosition = 0;
 figure
-[values, centers] = hist3([transpose(dyma_ws.full.carty), transpose(dyma_ws.full.cartz)],[56, 56]);
+[values, centers] = hist3([transpose(dyma_ws.full.carty), transpose(dyma_ws.full.cartz)],[51, 51]);
 imagesc(centers{:}, values.')
 c = colorbar;
 xlabel(c, "Number of Repeated Positions")

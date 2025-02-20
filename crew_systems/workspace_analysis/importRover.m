@@ -1,6 +1,6 @@
 function robot = importRover(rbt)
-    if(rbt == "nbv")
-        robot = importrobot("./rover_crane/urdf/rover_crane_arms/rover_crane_nbv.urdf");
+    if(rbt == "dyma")
+        robot = importrobot("./dymaflight/urdf/rover_crane_dyma.urdf");
     elseif(rbt == "sawyer")
         robot = importrobot("./rover_crane/urdf/rover_crane_arms/rover_crane_sawyer.urdf");
     elseif(rbt == "xz")
@@ -11,6 +11,8 @@ function robot = importRover(rbt)
         robot = importrobot("./rover_crane/urdf/rover_crane/rover_crane_old2.urdf");
     elseif(rbt == "crane_old2")
         robot = importrobot("./rover_crane/urdf/crane/crane_old2.urdf");
+    elseif(rbt == "crane")
+        robot = importrobot("./rover_crane/urdf/crane/crane.urdf");
     else
         robot = importrobot("./rover_crane/urdf/rover_crane/rover_crane.urdf");
     end
