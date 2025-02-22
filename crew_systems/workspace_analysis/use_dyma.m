@@ -94,8 +94,8 @@ dymaConfig(7).JointPosition = 0;
 show(dyma, dymaConfig);
 hold on
 fill3(dyma_reach.pitch.cartx, dyma_reach.pitch.carty, dyma_reach.pitch.cartz, "r", "FaceAlpha","0.5");
-fill3(dyma_reach.elbow.cartx, dyma_reach.elbow.carty, dyma_reach.elbow.cartz, "g", "FaceAlpha","0.5");
-fill3(dyma_reach.wrist.cartx, dyma_reach.wrist.carty, dyma_reach.wrist.cartz, "b", "FaceAlpha","0.5");
+fill3(dyma_reach.elbow.cartx, dyma_reach.elbow.carty+0.01, dyma_reach.elbow.cartz, "g", "FaceAlpha","0.5");
+fill3(dyma_reach.wrist.cartx, dyma_reach.wrist.carty+0.02, dyma_reach.wrist.cartz, "b", "FaceAlpha","0.5");
 title("Dymaflight Workspace Reach Along Global Y-Axis [3D]");
 xlabel("x-reach (meters)");
 ylabel("y-reach (meters)");

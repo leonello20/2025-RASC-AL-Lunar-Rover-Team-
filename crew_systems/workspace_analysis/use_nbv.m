@@ -94,7 +94,7 @@ figure
 show(nbv, nbvConfig);
 hold on
 fill3(nbv_reach.pitch.cartx, nbv_reach.pitch.carty, nbv_reach.pitch.cartz, "r", "FaceAlpha","0.5");
-fill3(nbv_reach.elbow.cartx, nbv_reach.elbow.carty, nbv_reach.elbow.cartz, "g", "FaceAlpha","0.5");
+fill3(nbv_reach.elbow.cartx, nbv_reach.elbow.carty+0.01, nbv_reach.elbow.cartz, "g", "FaceAlpha","0.5");
 title("NBV Workspace Reach Along Global Y-Axis [3D]");
 xlabel("x-reach (meters)");
 ylabel("y-reach (meters)");
