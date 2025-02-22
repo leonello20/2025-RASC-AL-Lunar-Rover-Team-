@@ -236,7 +236,7 @@
     <joint name="tippy_to_base" type="fixed">
         <parent link="tip_to_tippy"/>
         <child link="dyma_base_link"/>
-        <origin xyz="0 0 -1.054" rpy="0 3.14159 0"/>
+        <origin xyz="0 -0.1 -1.0" rpy="1.5708 0 0"/>
     </joint>
 
     <link name="shld_yaw">
